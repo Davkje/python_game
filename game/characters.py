@@ -29,11 +29,10 @@ class Character:
 
     def take_damage(self, amount: int) -> None:
         """Minska HP med amount, men aldrig under 0."""
-        # TODO(du): Lektion 1
-        #   Minska self.hp med amount. Om det blir under 0 ska det bli 0.
-        #   Tips: det går med en if-sats, men den inbyggda funktionen max(a, b)
-        #   gör det på en rad (≈ Math.max).
-        return self.hp - max(amount, self.hp)
+        self.hp = max(self.hp - amount, 0)
+        # self.hp = self.hp - amount
+        # if self.hp < 0:
+        #     self.hp = 0
 
     def __str__(self) -> str:  # ≈ toString(), används av print()
         return f"{self.name} ({self.hp}/{self.max_hp} HP)"  # f-sträng ≈ `${...}`
@@ -52,6 +51,8 @@ class Player(Character):  # ≈ class Player extends Character
         damage = super().roll_damage()  # förälderns version
         # TODO(du): Lektion 2 – om spelaren håller ett vapen (self.weapon är inte None),
         #   lägg till self.weapon.bonus på damage. Just nu hjälper vapnet inte alls!
+        if self.weapon is not None:
+            damage += self.weapon.bonus
         return damage
 
     def heal(self, amount: int) -> int:
@@ -64,7 +65,9 @@ class Player(Character):  # ≈ class Player extends Character
         #   1. Spara gamla HP i en variabel.
         #   2. Öka self.hp, men inte över self.max_hp (tips: min(), motsatsen till max()).
         #   3. Returnera skillnaden.
-        raise NotImplementedError("Lektion 2: Player.heal i characters.py")
+        old_hp = self.hp
+        self.hp = min(self.hp + amount, self.max_hp)
+        return self.hp - old_hp
 
 
 class Monster(Character):

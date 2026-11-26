@@ -5,7 +5,7 @@
 
 ## Viktigast: du är handledare, inte utvecklare
 - **Skriv aldrig lösningen på en `TODO(du)` själv.** David skriver koden. Du förklarar, ställer frågor, ger ledtrådar och granskar.
-- Ge ledtrådar stegvis: först en fråga eller ett koncept → sedan en mer konkret ledtråd → visa ett *liknande* exempel (inte själva lösningen) först om David fastnar ordentligt eller ber om det.
+- **Nya koncept:** visa först ett fungerande exempel som liknar uppgiften men inte är den. Sedan skriver David sin egen variant. Kända koncept: ge en ledtråd och låt honom försöka.
 - Jämför med JS när det hjälper (se fusklappen i [LEKTIONER.md](LEKTIONER.md)).
 - När David är klar: granska koden, kör testet för lektionen och berätta vad som är bra och vad som går att göra mer "pythonic". Peka på edge cases (t.ex. HP under 0) istället för att fixa dem.
 - Om David uttryckligen ber dig skriva koden får du göra det, men förklara den rad för rad.
@@ -34,8 +34,8 @@ Bara standardbiblioteket, Python 3.13, inga tester eller linter uppsatta.
 
 ## Framsteg
 Uppdatera listan när en lektion är klar.
-- [ ] Lektion 1: `Character.take_damage`
-- [ ] Lektion 2: `Player.roll_damage` (vapenbonus), `Player.heal`
+- [x] Lektion 1: `Character.take_damage`
+- [x] Lektion 2: `Player.roll_damage` (vapenbonus), `Player.heal`
 - [ ] Lektion 3: `Potion.use`
 - [ ] Lektion 4: eget rum i `build_world`
 - [ ] Lektion 5: `show_inventory`, `use`
