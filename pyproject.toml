@@ -1,0 +1,11 @@
+# pyproject.toml ≈ package.json
+# Spelet använder bara Pythons standardbibliotek. Vill du ha färger och tabeller
+# senare kör du `uv add rich`, så hamnar det här under dependencies.
+
+[project]
+name = "game"
+version = "0.1.0"
+description = "Grottan – ett textäventyr i Python"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
